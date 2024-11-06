@@ -1,0 +1,142 @@
+
+
+
+
+<style>
+
+    wordtune-read-extension {
+        display: none !important;
+    }
+
+    .flight-details-container1 {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 30px;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        text-align: left;
+    }
+    
+    .flight-details-container1 h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #2c3e50;
+    }
+    
+    .flight-details-container1 h2 {
+        font-size: 22px;
+        margin-bottom: 15px;
+        color: #34495e;
+    }
+    
+    .flight-details-container1 od {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .flight-details-container1 od li {
+        font-size: 18px;
+        margin-bottom: 10px;
+        background: #f5f5f5; 
+        padding: 12px 15px;
+        border-radius: 6px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .flight-details-container1 od li span {
+        font-size: 20px;
+        color: #2980b9;
+    }
+
+    .flight-details-container1 a {
+        display: block;
+        text-decoration: none;
+        margin-top: 20px;
+        padding: 15px;
+        font-size: 18px;
+        color: #fff;
+        background-color: #007bff;
+        border-radius: 8px;
+        text-align: center;
+        transition: background-color 0.3s ease;
+    }
+    
+    .flight-details-container1 a:hover {
+        background-color: #0056b3;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        color: white;
+        text-decoration: none;
+    }
+
+    
+    
+    @media (max-width: 768px) {
+        .flight-details-container1 {
+            width: 85%;
+            padding: 25px;
+        }
+
+        .flight-details-container1 h1,
+        .flight-details-container h2 {
+            font-size: 24px;
+        }
+        
+        .flight-details-container1 od li {
+            font-size: 16px;
+            padding: 10px 12px;
+        }
+        
+        .flight-details-container1 a {
+            padding: 12px 24px;
+            font-size: 16px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .flight-details-container1 {
+            width: 90%;
+            padding: 20px;
+        }
+        
+        .flight-details-container1 h1,
+        .flight-details-container1 h2 {
+            font-size: 20px;
+        }
+        
+        .flight-details-container1 od li {
+            font-size: 14px;
+            padding: 8px 10px;
+        }
+        
+        .flight-details-container1 a {
+            width: 100%;
+            font-size: 14px;
+            padding: 10px 20px;
+        }
+    }
+</style>
+
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div class="flight-details-container1">
+    <h1>{{ title |e }}</h1>
+    <h2>Flight Details</h2>
+    <od>
+        <li>Airline: {{ doc.airplane }}</li>
+        <li>{{ doc.source_airport_code }} <span>&#8594;</span> {{ doc.destination_airport_code }}</li>
+        <li>{{ frappe.utils.format_date(doc.date_of_departure, "d MMMM, YYYY") }} | {{ doc.time_of_departure }}</li>
+        <li>Duration : {{ frappe.utils.format_duration(doc.duration) }}</li>
+    </od>
+    <a href="/book-flight-ticket">Book Flight</a>
+</div>
+{% endblock %}
+
+
+<!-- this is a sample default web page template -->

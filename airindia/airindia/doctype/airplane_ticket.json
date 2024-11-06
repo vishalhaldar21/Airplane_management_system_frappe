@@ -1,0 +1,169 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format: {flight}-{source_airport_code}-to-{destination_airport_code}",
+ "creation": "2024-09-10 10:50:52.747817",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "booking_details_section",
+  "passenger",
+  "source_airport",
+  "destination_airport",
+  "column_break_gnsx",
+  "flight",
+  "source_airport_code",
+  "destination_airport_code",
+  "departure_details_section",
+  "departure_date",
+  "duration_of_flight",
+  "column_break_jqxd",
+  "departure_time",
+  "status",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "booking_details_section",
+   "fieldtype": "Section Break",
+   "label": "Booking Details"
+  },
+  {
+   "fieldname": "passenger",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Passenger",
+   "options": "Flight Passenger",
+   "reqd": 1
+  },
+  {
+   "fieldname": "source_airport",
+   "fieldtype": "Link",
+   "label": "Source Airport",
+   "options": "Airport",
+   "reqd": 1
+  },
+  {
+   "fieldname": "destination_airport",
+   "fieldtype": "Link",
+   "label": "Destination Airport ",
+   "options": "Airport",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_gnsx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "flight",
+   "fieldtype": "Link",
+   "label": "Flight ",
+   "options": "Airplane",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "source_airport.code",
+   "fieldname": "source_airport_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Source Airport Code",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "destination_airport.code",
+   "fieldname": "destination_airport_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Destination Airport Code",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "departure_details_section",
+   "fieldtype": "Section Break",
+   "label": "Departure Details"
+  },
+  {
+   "fieldname": "departure_date",
+   "fieldtype": "Date",
+   "label": "Departure Date ",
+   "reqd": 1
+  },
+  {
+   "fieldname": "duration_of_flight",
+   "fieldtype": "Duration",
+   "label": "Duration of Flight",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_jqxd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "departure_time",
+   "fieldtype": "Time",
+   "label": "Departure Time",
+   "reqd": 1
+  },
+  {
+   "default": "Booked",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Booked\nChecked-In\nBoarded",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Airplane Ticket",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-09-16 12:40:09.956331",
+ "modified_by": "Administrator",
+ "module": "Airindia",
+ "name": "Airplane Ticket",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Cyan",
+   "title": "Booked"
+  },
+  {
+   "color": "Light Blue",
+   "title": "Checked-in"
+  },
+  {
+   "color": "Green",
+   "title": "Boarded"
+  }
+ ],
+ "track_changes": 1
+}

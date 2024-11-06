@@ -1,0 +1,28 @@
+{
+ "add_total_row": 1,
+ "columns": [],
+ "creation": "2024-10-17 12:21:58.084603",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2024-10-17 19:17:00.435274",
+ "modified_by": "Administrator",
+ "module": "Airindia",
+ "name": "Add-on Popularity",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT name AS \"Add-on\",\nCOUNT(*) AS \"Sold Count\"\nFROM `tabAirplane Ticket Add-on Type`\nGROUP BY name\nORDER BY COUNT(*)\nDESC;",
+ "ref_doctype": "Airplane Ticket Add-on Type",
+ "report_name": "Add-on Popularity",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "timeout": 0
+}

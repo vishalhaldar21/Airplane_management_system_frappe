@@ -1,0 +1,137 @@
+
+
+
+
+<style>
+
+    .row1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        margin: 20px auto;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .text-container {
+        flex-grow: 1;
+        padding-right: 20px;
+    }
+
+    .row1 h1 {
+        font-size: 20px;
+        margin: 5px 0;
+        color: #333;
+        text-align: left;
+    }
+
+    .row1 p {
+        font-size: 14px;
+        color: #666;
+        margin: 3px 0;
+    }
+
+    .row1 p.route {
+        font-weight: bold;
+        font-size: 16px;
+        color: #444;
+    }
+
+    .row1 a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+    }
+
+    .row1 a:hover {
+        background-color: #0056b3;
+    }
+
+    .row1:hover {
+        background-color: #f1f1f1;
+        border-color: #ccc;
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    @media (max-width: 768px) {
+        .row1 {
+            flex-direction: column;
+            align-items: flex-start;
+            width: 95%;
+        }
+
+        .text-container {
+            width: 100%;
+            padding: 0;
+        }
+
+        .row1 h1 {
+            font-size: 18px;
+            text-align: left;
+        }
+
+        .row1 p {
+            font-size: 13px;
+        }
+
+        .row1 a {
+            margin-top: 10px;
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .row1 {
+            padding: 10px;
+        }
+
+        .row1 h1 {
+            font-size: 16px;
+        }
+
+        .row1 p.route {
+            font-size: 14px;
+        }
+
+        .row1 p {
+            font-size: 12px;
+        }
+
+        .row1 a {
+            padding: 8px;
+            font-size: 12px;
+        }
+    }
+
+	span {
+		content: "\2192";
+	}
+
+</style>
+
+
+
+
+<div class="row1">
+    <div class="text-container">
+        <h1>{{ doc.airplane }}</h1>
+        <p class="route">{{ doc.source_airport_code }} <span>&#8594;</span> {{ doc.destination_airport_code }}</p>
+        <p>{{ frappe.utils.format_date(doc.date_of_departure, "d MMMM, YYYY") }} | {{ doc.time_of_departure }} | {{ frappe.utils.format_duration(doc.duration) }}</p>
+    </div>
+    <a href="/{{ doc.route | e }}">View Flight</a>
+</div>
+
+
+<!-- this is a sample default list template -->
+

@@ -1,0 +1,1 @@
+The airline is to depart in 24 hours
