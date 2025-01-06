@@ -43,17 +43,7 @@ class AirplaneTicket(Document):
         self.seat = f"{random_integer}{random_letter}"
         
 
-    # def validate(self):
-    #     # Get the flight associated with this ticket
-    #     airplane = frappe.get_doc("Airplane", self.airplane)
-        
-    #     # Get the total number of tickets created for this flight (Airplane Ticket)
-    #     total_tickets = frappe.db.count('Airplane Ticket', {'airplane': self.airplane})
-        
-    #     # Compare the total tickets with the airplane's capacity
-    #     if total_tickets >= airplane.capacity:
-    #         frappe.throw(f"The airplane has reached its maximum capacity of {airplane.capacity} seats. No more tickets can be issued.")
-    
+  
     def on_update(self):
         self.airplane_capacity()
 
@@ -62,7 +52,7 @@ class AirplaneTicket(Document):
             ticket_count = frappe.db.count(
                 'Airplane Ticket',
                 filters={
-                    'fligth': self.flight,
+                    'flight': self.flight,
                     'name':('!=',self.name)
                 }
             )

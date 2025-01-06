@@ -1,0 +1,124 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format: AS - {shop_number} - {airport} - {###}",
+ "creation": "2024-11-13 12:48:48.470813",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "airport",
+  "airport_code",
+  "shop_number",
+  "shop_name",
+  "shop_address",
+  "column_break_hxqr",
+  "shop_photo",
+  "shop_size",
+  "select_qhzc",
+  "is_available",
+  "route"
+ ],
+ "fields": [
+  {
+   "fieldname": "airport",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Airport",
+   "options": "Airport",
+   "reqd": 1
+  },
+  {
+   "fieldname": "shop_number",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Shop Number",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "shop_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Shop Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "shop_address",
+   "fieldtype": "Small Text",
+   "label": "Shop Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_hxqr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shop_photo",
+   "fieldtype": "Attach Image",
+   "label": "Shop Photo"
+  },
+  {
+   "description": "\nShop area in square feet or meters.",
+   "fieldname": "shop_size",
+   "fieldtype": "Data",
+   "label": "Shop Size"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_available",
+   "fieldtype": "Check",
+   "label": "Is Available?"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "airport.code",
+   "fieldname": "airport_code",
+   "fieldtype": "Data",
+   "label": "Airport code",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "Available",
+   "fieldname": "select_qhzc",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Shop Status",
+   "options": "Available\nOccupied",
+   "reqd": 1
+  }
+ ],
+ "has_web_view": 1,
+ "index_web_pages_for_search": 1,
+ "is_published_field": "is_available",
+ "links": [],
+ "modified": "2024-11-29 10:28:29.226079",
+ "modified_by": "Administrator",
+ "module": "airport shop management",
+ "name": "Airport Shop",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "route": "shops",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

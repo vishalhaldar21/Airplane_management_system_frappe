@@ -1,0 +1,60 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{###}",
+ "creation": "2024-12-25 10:47:45.136276",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "task_name",
+  "task_priority",
+  "assign_to"
+ ],
+ "fields": [
+  {
+   "fieldname": "task_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Task Name",
+   "reqd": 1
+  },
+  {
+   "default": "Low",
+   "fieldname": "task_priority",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Task Priority",
+   "options": "Low\nMedium\nHigh"
+  },
+  {
+   "fieldname": "assign_to",
+   "fieldtype": "Data",
+   "label": "Assign to"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-12-25 11:02:34.606961",
+ "modified_by": "Administrator",
+ "module": "airport shop management",
+ "name": "Testing Task",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

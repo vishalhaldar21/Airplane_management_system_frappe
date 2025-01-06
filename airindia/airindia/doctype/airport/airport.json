@@ -34,8 +34,13 @@
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-10-19 12:32:42.667645",
+ "links": [
+  {
+   "link_doctype": "Airport Shop",
+   "link_fieldname": "airport"
+  }
+ ],
+ "modified": "2024-11-24 10:54:59.302791",
  "modified_by": "Administrator",
  "module": "Airindia",
  "name": "Airport",

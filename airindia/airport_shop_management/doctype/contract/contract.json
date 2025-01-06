@@ -1,0 +1,206 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format: Contract - {tenant}-{###}",
+ "creation": "2024-11-06 16:31:23.266203",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "contract_form_section",
+  "tenant_details_column",
+  "tenant",
+  "tenant_email",
+  "contact_number",
+  "tenant_adress",
+  "column_break_brnj",
+  "shop",
+  "shop_name",
+  "shop_number",
+  "shop_address",
+  "shop_size",
+  "airport_details_column",
+  "airport",
+  "airport_code",
+  "contract_details_column",
+  "new_shop_name",
+  "payment_terms",
+  "start_date",
+  "end_date",
+  "rent_amount",
+  "payment_status"
+ ],
+ "fields": [
+  {
+   "fieldname": "tenant",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tenant",
+   "options": "Tenant",
+   "reqd": 1
+  },
+  {
+   "fieldname": "shop",
+   "fieldtype": "Link",
+   "label": "Shop",
+   "options": "Airport Shop",
+   "reqd": 1
+  },
+  {
+   "fieldname": "rent_amount",
+   "fieldtype": "Currency",
+   "label": "Rent Amount",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payment_terms",
+   "fieldtype": "Select",
+   "label": "Payment Terms",
+   "options": "Monthly\nQuarterly",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_brnj",
+   "fieldtype": "Column Break",
+   "label": "Shop details"
+  },
+  {
+   "fetch_from": "tenant.email",
+   "fieldname": "tenant_email",
+   "fieldtype": "Data",
+   "label": "Tenant Email",
+   "read_only": 1
+  },
+  {
+   "default": "Unpaid",
+   "fieldname": "payment_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Payment Status",
+   "options": "Paid\nUnpaid",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "shop.airport",
+   "fieldname": "airport",
+   "fieldtype": "Data",
+   "label": "Airport",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "shop.airport_code",
+   "fieldname": "airport_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Airport Code",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "tenant_details_column",
+   "fieldtype": "Column Break",
+   "label": "Tenant Details"
+  },
+  {
+   "fetch_from": "tenant.phone_number",
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "tenant.address",
+   "fieldname": "tenant_adress",
+   "fieldtype": "Data",
+   "label": "Tenant Adress",
+   "read_only": 1
+  },
+  {
+   "fieldname": "airport_details_column",
+   "fieldtype": "Column Break",
+   "label": "Airport Details"
+  },
+  {
+   "fieldname": "contract_details_column",
+   "fieldtype": "Column Break",
+   "label": "Contract details"
+  },
+  {
+   "fetch_from": "shop.shop_name",
+   "fieldname": "shop_name",
+   "fieldtype": "Data",
+   "label": "Shop Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "shop.shop_number",
+   "fieldname": "shop_number",
+   "fieldtype": "Data",
+   "label": "Shop Number",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "shop.shop_address",
+   "fieldname": "shop_address",
+   "fieldtype": "Data",
+   "label": "Shop Address",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "shop.shop_size",
+   "fieldname": "shop_size",
+   "fieldtype": "Data",
+   "label": "Shop Size"
+  },
+  {
+   "fieldname": "new_shop_name",
+   "fieldtype": "Data",
+   "label": "New Shop Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contract_form_section",
+   "fieldtype": "Section Break",
+   "label": "Contract Form"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-14 16:57:57.412472",
+ "modified_by": "Administrator",
+ "module": "airport shop management",
+ "name": "Contract",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "new_shop_name"
+}

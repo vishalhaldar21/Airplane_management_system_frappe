@@ -164,6 +164,12 @@ app_license = "mit"
 # 	"monthly": [
 # 		"airindia.tasks.monthly"
 # 	],
+    
+#     "cron" : {
+#         "50 6 * * *" : [
+#             "airindia.hello.print_hello"
+#         ]
+#     }
 # }
 
 # Testing

@@ -4,19 +4,27 @@
 frappe.ui.form.on("Airplane Ticket", {
 	refresh(frm) {
 
-		frm.add_custom_button("Assign Seat", function(){
+		
 
-			frappe.prompt({
-				label: "Seat Number",
-				fieldname: "seat_number",
-				fieldtype: "Data"
+		if ((frm.doc.status == "Boarded")){
 
-			},(values)=>{
+			frm.add_custom_button("Assign Seat", function(){
 
-				frm.set_value("seat",values.seat_number);
-			},"Select Seat","Assign");
+				frappe.prompt({
+					label: "Seat Number",
+					fieldname: "seat_number",
+					fieldtype: "Data"
+	
+				},(values)=>{
+	
+					frm.set_value("seat",values.seat_number);
+				},"Select Seat","Assign");
+	
+			},"Actions");
 
-		},"Actions");
+
+		}
+		   
 
 	},
 

@@ -1,0 +1,189 @@
+{% extends "templates/web.html" %} {% block page_content %}
+
+<style>
+  
+	.shop-details-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-start;
+		max-width: 1100px;
+		margin: 40px auto;
+		padding: 20px;
+		background-color: #f9f9f9;
+		border-radius: 8px;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		font-family: Arial, sans-serif;
+	}
+
+	.shop-info {
+		flex: 1;
+		padding-right: 30px;
+	}
+
+	.shop-info h1 {
+		font-size: 35px;
+		padding-bottom: 20px;
+		color: #007bff;
+		margin-bottom: 10px;
+	}
+
+	.shop-info h2 {
+		font-size: 24px;
+		color: #007bff;
+		margin-bottom: 15px;
+	}
+
+	.shop-info-details {
+		margin-bottom: 20px;
+	}
+
+	.shop-info-details p {
+		margin: 8px 0;
+		font-size: 16px;
+		line-height: 1.6;
+	}
+
+	.shop-info-details strong {
+		font-weight: bold;
+	}
+
+	.shop-photo {
+		flex: 1;
+		text-align: center;
+	}
+
+	.shop-photo-img {
+		max-width: 100%;
+		height: auto;
+		border-radius: 8px;
+	}
+
+	.button-container {
+		text-align: center;
+		margin-top: 20px;
+	}
+
+	.book-shop-button {
+		display: inline-block;
+		padding: 12px 20px;
+		font-size: 16px;
+		font-weight: bold;
+		color: #ffffff;
+		background-color: #007bff;
+		text-decoration: none;
+		border-radius: 4px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+		transition: background-color 0.3s, box-shadow 0.3s;
+	}
+
+	.book-shop-button:hover {
+		background-color: #0056b3;
+		color: white;
+		text-decoration: none;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+	}
+
+	@media (max-width: 1024px) {
+		.shop-info h1 {
+			font-size: 28px;
+			color: #007bff;
+			margin-bottom: 0px;
+			padding-bottom: 10px;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.shop-details-container {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.shop-info {
+			padding-right: 0;
+			text-align: center;
+		}
+
+		.shop-photo {
+			margin-top: 20px;
+		}
+
+		.shop-photo-img {
+			max-width: 90%;
+			height: auto;
+		}
+
+		.book-shop-button {
+			width: 100%;
+			font-size: 18px;
+			text-align: center;
+		}
+
+		.shop-info h1 {
+			font-size: 24px;
+		}
+
+		.shop-info h2 {
+			font-size: 20px;
+		}
+
+		.shop-info-details p {
+			font-size: 14px;
+		}
+	}
+
+	@media (max-width: 425px) {
+		.shop-details-container {
+			padding: 15px;
+		}
+
+		.shop-info h1 {
+			font-size: 20px;
+		}
+
+		.shop-info h2 {
+			font-size: 18px;
+		}
+
+		.shop-info-details p {
+			font-size: 14px;
+		}
+
+		.book-shop-button {
+			width: 100%;
+			font-size: 15px;
+			text-align: center;
+		}
+	}
+
+</style>
+
+<div class="shop-details-container">
+	<div class="shop-info">
+		<h1>{{ doc.airport }}</h1>
+
+		
+		<div class="shop-info-details">
+			<p><strong>Airport Code:</strong> {{ doc.airport_code }}</p>
+			<p><strong>Shop Number:</strong> {{ doc.shop_number }}</p>
+			<p><strong>Shop Name:</strong> {{ doc.shop_name }}</p>
+			<p><strong>Shop Address:</strong> {{ doc.shop_address }}</p>
+			<p><strong>Shop Size:</strong> {{ doc.shop_size }}</p>
+			<p><strong>Status:</strong> {{ doc.shop_status }}</p>
+		</div>
+
+		
+		<div class="button-container">
+			<a href="http://airindia.in:8002/tenant-data/new" class="book-shop-button">Book Shop</a>
+		</div>
+	</div>
+
+
+	{% if doc.shop_photo %}
+	<div class="shop-photo">
+		<img src="{{ doc.shop_photo }}" alt="Shop Photo" class="shop-photo-img" />
+	</div>
+	{% endif %}
+</div>
+
+{% endblock %}

@@ -17,11 +17,14 @@
   "section_break_xumi",
   "source_airport",
   "destination_airport",
+  "gate_number",
   "column_break_bvvi",
   "source_airport_code",
   "destination_airport_code",
   "is_published",
-  "route"
+  "route",
+  "section_break_lyns",
+  "crew_members"
  ],
  "fields": [
   {
@@ -122,6 +125,23 @@
    "fieldtype": "Data",
    "label": "route",
    "no_copy": 1
+  },
+  {
+   "fieldname": "section_break_lyns",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "crew_members",
+   "fieldtype": "Table",
+   "label": "Crew Members",
+   "options": "crew members",
+   "reqd": 1
+  },
+  {
+   "fieldname": "gate_number",
+   "fieldtype": "Data",
+   "label": "Gate Number",
+   "reqd": 1
   }
  ],
  "has_web_view": 1,
@@ -129,7 +149,7 @@
  "is_published_field": "is_published",
  "is_submittable": 1,
  "links": [],
- "modified": "2024-10-19 12:37:15.577961",
+ "modified": "2024-11-06 15:21:53.344545",
  "modified_by": "Administrator",
  "module": "Airindia",
  "name": "Airplane Flight",
